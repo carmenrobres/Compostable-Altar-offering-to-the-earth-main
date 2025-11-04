@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Forecast Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 16px; }
+    .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .plots { display: grid; grid-template-columns: repeat(2, minmax(320px, 1fr)); gap: 18px; margin-top: 16px; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 10px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h2>Forecast Dashboard</h2>
+
+  <div class="row">
+    <input type="file" id="fileInput" accept=".csv" />
+    <button id="uploadBtn">Upload first-week CSV</button>
+
+    <label for="model">Model:</label>
+    <select id="model">
+      <option value="LSTM">LSTM</option>
+      <option value="SARIMA">SARIMA</option>
+    </select>
+
+    <label for="horizon">Days:</label>
+    <select id="horizon">
+      <option value="7">7</option>
+      <option value="14">14</option>
+      <option value="58">58</option>
+    </select>
+
+    <button id="predictBtn">Predict</button>
+    <span id="status"></span>
+  </div>
+
+  <div id="note" class="hidden">Upload complete.</div>
+
+  <div class="plots">
+    <div class="card"><div id="plot-humidity"></div></div>
+    <div class="card"><div id="plot-ec"></div></div>
+    <div class="card"><div id="plot-n"></div></div>
+    <div class="card"><div id="plot-ph"></div></div>
+    <div class="card"><div id="plot-p"></div></div>
+    <div class="card"><div id="plot-k"></div></div>
+  </div>
+
+   <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script src="/static/script.js"></script>
+</body>
+</html>

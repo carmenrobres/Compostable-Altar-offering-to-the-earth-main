@@ -1,0 +1,51 @@
+{
+  "groups": [
+    "soil",
+    "soil2",
+    "soil3"
+  ],
+  "targets": [
+    "humidity",
+    "ph",
+    "ec",
+    "n",
+    "p",
+    "k"
+  ],
+  "covars": [
+    "day_sin",
+    "day_cos",
+    "irrig_sin",
+    "irrig_cos",
+    "day_norm",
+    "hour"
+  ],
+  "seq_len": 16,
+  "irrigation_anchor_hour": 13,
+  "group_cols": {
+    "soil": {
+      "humidity": "soil_humidity",
+      "ph": "soil_ph",
+      "ec": "soil_ec",
+      "n": "soil_n",
+      "p": "soil_p",
+      "k": "soil_k"
+    },
+    "soil2": {
+      "humidity": "soil2_humidity",
+      "ph": "soil2_ph",
+      "ec": "soil2_ec",
+      "n": "soil2_n",
+      "p": "soil2_p",
+      "k": "soil2_k"
+    },
+    "soil3": {
+      "humidity": "soil3_humidity",
+      "ph": "soil3_ph",
+      "ec": "soil3_ec",
+      "n": "soil3_n",
+      "p": "soil3_p",
+      "k": "soil3_k"
+    }
+  }
+}
